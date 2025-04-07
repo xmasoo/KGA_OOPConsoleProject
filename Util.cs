@@ -12,6 +12,7 @@ namespace KGA_OOPConsoleProject
         {
             Console.WriteLine(text);
             Console.ReadKey(true);
+            Console.WriteLine();
         }
     }
 }

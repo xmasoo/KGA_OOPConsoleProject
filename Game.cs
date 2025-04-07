@@ -21,6 +21,10 @@
             sceneDic.Add("Intro", new Intro());
             sceneDic.Add("Setting", new Setting());
             sceneDic.Add("Town", new Town());
+            sceneDic.Add("Church", new Church());
+            sceneDic.Add("HuntingGround", new HuntingGround());
+            sceneDic.Add("Shop", new Shop());
+
 
 
 

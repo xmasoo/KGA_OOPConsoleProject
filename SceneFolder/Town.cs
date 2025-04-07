@@ -9,10 +9,21 @@ namespace KGA_OOPConsoleProject
     internal class Town : Scene
     {
         private ConsoleKey input;
+        private bool isFirst = true;
         public override void Render()
         {
-            Console.WriteLine("마을");
-        
+            if (isFirst)//처음만 발생하는 이벤트
+            {
+                Console.WriteLine("당신의 모험은 이제 막 시작되었다...");
+                Console.WriteLine("뉴비핥는아저씨가 나타나서 당신에게 소매넣기를 했습니다.");
+                Console.WriteLine("100골드를 획득했습니다.");
+                //TODO 100골드 추가하는 코드
+                Util.PressAnyKey();
+                isFirst = false;
+            }
+            Console.WriteLine("현재 위치는 마을입니다.");
+            Console.WriteLine("이동할 장소를 고르세요");
+            Console.Write("1. 상점 \t 2. 성당 \t 3. 사냥터");
         }
         public override void Input()
         {
@@ -24,7 +35,20 @@ namespace KGA_OOPConsoleProject
         }
         public override void Result()
         {
-            
+            switch (input)
+            {
+                case ConsoleKey.D1:
+                    Game.ChangeScene("Shop");
+                    break;
+                case ConsoleKey.D2:
+                    Game.ChangeScene("Church");
+                    break;
+                case ConsoleKey.D3:
+                    Game.ChangeScene("HuntingGround");
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
