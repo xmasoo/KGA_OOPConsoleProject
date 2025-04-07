@@ -4,6 +4,7 @@
     {
         static void Main(string[] args)
         {
+            Util.Transition(2);
             Game.Start();
 
             while (Game.isRunning)

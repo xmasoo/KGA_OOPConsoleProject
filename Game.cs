@@ -1,4 +1,6 @@
-﻿namespace KGA_OOPConsoleProject
+﻿using KGA_OOPConsoleProject.SceneFolder;
+
+namespace KGA_OOPConsoleProject
 {
     public static class Game
     {
@@ -23,6 +25,7 @@
             sceneDic.Add("Town", new Town());
             sceneDic.Add("Church", new Church());
             sceneDic.Add("HuntingGround", new HuntingGround());
+            sceneDic.Add("Hunting", new Hunting());
             sceneDic.Add("Shop", new Shop());
 
 

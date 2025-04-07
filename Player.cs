@@ -39,9 +39,13 @@ namespace KGA_OOPConsoleProject
         public Inventory Inventory { get { return inventory; } }
 
 
+        private Inventory equipInventory;
+        public Inventory EquipInventory { get { return equipInventory; } }
+
         public Player() 
         { 
             inventory = new Inventory(6); // 인벤토리 최대 크기 6으로 설정
+            equipInventory = new Inventory(2); // 장비 인벤토리 최대 크기 2으로 설정 무기, 방어구
             maxHP = 100;
             currentHP = maxHP;
             attackPower = 10;

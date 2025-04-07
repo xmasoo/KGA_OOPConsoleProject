@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace KGA_OOPConsoleProject
+﻿namespace KGA_OOPConsoleProject
 {
     internal class Inventory
     {
@@ -41,10 +35,23 @@ namespace KGA_OOPConsoleProject
         }
         public void ShowItems()
         {
-            Console.WriteLine("인벤토리:");
-            foreach (var item in items)
+            if (maxSize == 6)
             {
-                Console.WriteLine($"- {item.Name}");
+                Console.WriteLine("인벤토리:");
+                foreach (var item in items)
+                {
+                    Console.WriteLine($"- {item.Name}");
+                }
+            }
+            else if (maxSize == 2)
+            {
+                Console.WriteLine("장비 인벤토리:");
+                Console.WriteLine($"무기 - {items[0]}");
+                Console.WriteLine($"방어구 - {items[1]}");
+            }
+            else
+            {
+                Console.WriteLine("인벤토리가 비어 있습니다.");
             }
         }
     }

@@ -1,19 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace KGA_OOPConsoleProject
+﻿namespace KGA_OOPConsoleProject.SceneFolder
 {
-    internal class HuntingGround : Scene
+    internal class Hunting : Scene
     {
         private ConsoleKey input;
         public override void Render()
         {
             Console.WriteLine("현재 위치는 사냥터입니다.");
-            Console.WriteLine("무엇을 하시겠습니까?");
-            Console.Write("1. 사냥하기 \t 2. 보스 도전 \t 3. 마을로 돌아가기");
+            Console.WriteLine("사냥할 난이도를 고르세요");
+            Console.Write("1. 초급(LV10이하 추천) \t 2. 중급(LV10이상 추천) \t 3. 고급(LV20이상 추천)");
         }
         public override void Input()
         {
@@ -21,25 +15,23 @@ namespace KGA_OOPConsoleProject
         }
         public override void Update()
         {
-            
-        }
-        public override void Result()
-        {
             switch (input)
             {
                 case ConsoleKey.D1:
-                    Game.ChangeScene("Hunting");
                     break;
                 case ConsoleKey.D2:
-                    //TODO 보스 도전하는 코드
                     break;
                 case ConsoleKey.D3:
-                    Game.ChangeScene("Town");
                     break;
                 default:
                     break;
             }
         }
+        public override void Result()
+        {
+
+        }
+
 
     }
 }
