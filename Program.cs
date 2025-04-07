@@ -8,6 +8,7 @@
 
             while (Game.isRunning)
             {
+                Console.Clear();
                 Game.currentScene.Render();
                 Game.currentScene.Input();
                 Game.currentScene.Update();

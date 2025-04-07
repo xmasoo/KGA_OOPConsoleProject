@@ -4,7 +4,7 @@
     {
         public static bool isRunning = true;
         private static Dictionary<string, Scene> sceneDic;
-        public static Scene currentScene = new Scene1();
+        public static Scene currentScene;
 
         public static void ChangeScene(string sceneName)
         {
@@ -12,18 +12,22 @@
         }
         public static void Start()
         {
-            //타이틀   
-            Title.ShowTitle();
-
             //초기 설정
-            Dictionary<string, Scene> sceneDic = new Dictionary<string, Scene>();
-            sceneDic.Add("1", new Scene1());
-            sceneDic.Add("2", new Scene2());
-            sceneDic.Add("3", new Scene3());
+            Console.CursorVisible = false;
+            //Console.SetWindowSize(40, 30);
 
-            //인트로
+            sceneDic = new Dictionary<string, Scene>();
+            sceneDic.Add("Title", new Title());
+            sceneDic.Add("Intro", new Intro());
+            sceneDic.Add("Setting", new Setting());
+            sceneDic.Add("Town", new Town());
 
-            Title.ShowIntro();
+
+
+            currentScene = sceneDic["Title"];
+
+
+
         }
 
 
