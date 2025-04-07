@@ -4,7 +4,17 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Game.Start();
+
+            while (Game.isRunning)
+            {
+                Game.currentScene.Render();
+                Game.currentScene.Input();
+                Game.currentScene.Update();
+                Game.currentScene.Result();
+            }
+
+            Game.End();
         }
     }
 }
