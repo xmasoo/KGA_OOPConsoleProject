@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace KGA_OOPConsoleProject
 {
-    public class Shop : Scene
+    public class Boss : Scene
     {
         private ConsoleKey input;
         public override void Render()
         {
-            Console.WriteLine("현재 위치는 상점입니다.");
-            Console.WriteLine("무엇을 하시겠습니까?");
-            Console.Write("1. 구매 \t 2. 판매 \t 3. 강도 \t 4. 마을로 돌아가기");
+            Console.WriteLine("현재 위치는 보스방입니다.");
+            Console.WriteLine("보스에게 도전하시겠습니까?");
+            Console.Write("1. 네 \t 2. ㅌㅌ ");
         }
         public override void Input()
         {
@@ -28,16 +28,11 @@ namespace KGA_OOPConsoleProject
             switch (input)
             {
                 case ConsoleKey.D1:
-                    //TODO 구매하는 코드
+                    Game.monster = MonsterFactory.CreateMonster(4);
+                    Game.ChangeScene("Battle");
                     break;
                 case ConsoleKey.D2:
-                    //TODO 판매하는 코드
-                    break;
-                case ConsoleKey.D3:
-                    //TODO 강도당하는 코드
-                    break;
-                case ConsoleKey.D4:
-                    Game.ChangeScene("Town");
+                    Game.ChangeScene("HuntingGround");
                     break;
                 default:
                     break;

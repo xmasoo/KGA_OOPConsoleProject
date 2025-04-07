@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KGA_OOPConsoleProject
 {
-    internal class Item
+    public class Item
     {
         public string Name { get; set; }
 

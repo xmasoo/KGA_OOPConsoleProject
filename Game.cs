@@ -7,7 +7,9 @@ namespace KGA_OOPConsoleProject
         public static bool isRunning = true;
         private static Dictionary<string, Scene> sceneDic;
         public static Scene currentScene;
-
+        public static Player player;
+        public static int bossCount;
+        public static Monster monster;
         public static void ChangeScene(string sceneName)
         {
             currentScene = sceneDic[sceneName];
@@ -16,7 +18,6 @@ namespace KGA_OOPConsoleProject
         {
             //초기 설정
             Console.CursorVisible = false;
-            //Console.SetWindowSize(40, 30);
 
             sceneDic = new Dictionary<string, Scene>();
             sceneDic.Add("Title", new Title());
@@ -27,20 +28,21 @@ namespace KGA_OOPConsoleProject
             sceneDic.Add("HuntingGround", new HuntingGround());
             sceneDic.Add("Hunting", new Hunting());
             sceneDic.Add("Shop", new Shop());
+            sceneDic.Add("Boss", new Boss());
+            sceneDic.Add("Battle", new Battle());
 
-
-
+            player = new Player();
 
             currentScene = sceneDic["Title"];
 
-
+            bossCount = 0;
 
         }
 
 
         public static void End()
         {
-
+            Console.WriteLine("게임 클리어!");
         }
     }
 }

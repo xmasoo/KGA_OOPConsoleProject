@@ -1,6 +1,6 @@
 ﻿namespace KGA_OOPConsoleProject
 {
-    internal class Inventory
+    public class Inventory
     {
         private List<Item> items;
         private int maxSize;

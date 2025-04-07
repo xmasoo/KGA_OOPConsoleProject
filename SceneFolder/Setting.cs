@@ -1,6 +1,6 @@
 ﻿namespace KGA_OOPConsoleProject
 {
-    internal class Setting : Scene
+    public class Setting : Scene
     {
         private ConsoleKey input;
         int cursorPos = 2;
@@ -17,7 +17,7 @@
             Console.WriteLine("  뒤로가기");
             Console.WriteLine();
             Console.WriteLine("아직은 의미없는 기능 나중에 추가하면 추가설명");
-            Console.WriteLine("아무 지점에서나 0을 누르거나 뒤로가기에 커서를 두고 엔터를 누르면 타이틀로 돌아갑니다.");
+            Console.WriteLine("아무 지점에서나 0을 누르거나 뒤로가기에 커서를 두고 스페이스바를 누르면 타이틀로 돌아갑니다.");
 
             PrintCursor();
         }
@@ -36,7 +36,7 @@
         public override void Result()
         {
             if (input == ConsoleKey.D0) Game.ChangeScene("Title");
-            if (cursorPos == 6 && input == ConsoleKey.Enter) Game.ChangeScene("Title");
+            if (cursorPos == 6 && input == ConsoleKey.Spacebar) Game.ChangeScene("Title");
         }
 
         public void PrintCursor()//커서 위치는 유동적이라서 따로 메서드를 생성

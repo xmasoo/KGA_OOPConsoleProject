@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KGA_OOPConsoleProject
 {
-    internal class Player
+    public class Player
     {
         private int maxHP;
         public int MaxHP { get { return maxHP; } }
@@ -27,8 +27,8 @@ namespace KGA_OOPConsoleProject
         public int Level { get { return level; } set { level = value; } }
 
 
-        private int experience;
-        public int Experience { get { return experience; } set { experience = value; } }
+        private int exp;
+        public int Exp { get { return exp; } set { exp = value; } }
 
 
         private int gold;
@@ -51,7 +51,7 @@ namespace KGA_OOPConsoleProject
             attackPower = 10;
             defensePower = 5;
             level = 1;
-            experience = 0;
+            Exp = 0;
             gold = 0;
         }
         public void Heal(int amount)
@@ -70,11 +70,18 @@ namespace KGA_OOPConsoleProject
                 currentHP = 0;
             }
         }
-
-        public void GainExperience(int amount)
+        public void IsDead()
         {
-            experience += amount;
-            if (experience >= 100) // 레벨업 조건
+            if (currentHP <= 0)
+            {
+                Console.WriteLine("플레이어가 죽었습니다.");
+                // 게임 오버 처리
+            }
+        }
+        public void GainExp(int amount)
+        {
+            Exp += amount;
+            if (Exp >= 100) // 레벨업 조건
             {
                 LevelUp();
             }
@@ -82,7 +89,7 @@ namespace KGA_OOPConsoleProject
         private void LevelUp()
         {
             level++;
-            experience -= 100; // 레벨업 시 경험치 감소
+            Exp -= 100; // 레벨업 시 경험치 감소
             maxHP += 10; // 레벨업 시 최대 HP 증가
             attackPower += 2; // 레벨업 시 공격력 증가
             defensePower += 1; // 레벨업 시 방어력 증가
@@ -107,7 +114,7 @@ namespace KGA_OOPConsoleProject
         }
         public void ShowStatus()
         {
-            Console.WriteLine($"레벨: {level}, HP: {currentHP}/{maxHP}, 공격력: {attackPower}, 방어력: {defensePower}, 경험치: {experience}, 골드: {gold}");
+            Console.WriteLine($"레벨: {level}, HP: {currentHP}/{maxHP}, 공격력: {attackPower}, 방어력: {defensePower}, 경험치: {exp}, 골드: {gold}");
         }
         public void ShowInventory()
         {

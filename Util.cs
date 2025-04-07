@@ -1,6 +1,6 @@
 ﻿namespace KGA_OOPConsoleProject
 {
-    internal static class Util
+    public static class Util
     {
         public static void PressAnyKey(string text = "아무 키나 입력하세요")
         {
@@ -78,7 +78,7 @@
                 Console.Clear();
                 for (int i = 0; i < asciiArt.GetLength(0); i++)
                 {
-                    for (int j = 0; j < asciiArt[0].Length; j++)
+                    for (int j = 0; j < asciiArt[i].Length; j++)
                     {
                         Console.Write(asciiArt[i][j]);
                     }
@@ -88,13 +88,31 @@
                 Util.PressAnyKey("화면 전환 중...");
                 Console.Clear();
             }
-            else if (a == 3)
+            else if (a == 3)//전투화면전환
             {
+                string[] asciiArt = new string[]
+                {
+                    "  ,--.   ,--.  ,--.   ,--.  ,--.   ,--.  ,--.   ,--.",
+                    " /    \\ /    \\ |  |   |  |  |  |   |  |  |  |   |  |",
+                    "|  ()  |  ()  ||  |   |  |  |  |   |  |  |  |   |  |",
+                    "|      \\      ||  '--.|  '--.|  '--.|  '--.|  '--.|",
+                    "|       \\     ||     ||     ||     ||     ||     ||",
+                    "`--------`---' `-----'`-----'`-----'`-----'`-----'",
+                };
                 Console.Clear();
-                Console.WriteLine("화면 전환 중...");
-                System.Threading.Thread.Sleep(1000);
+                for (int i = 0; i < asciiArt.GetLength(0); i++)
+                {
+                    for (int j = 0; j < asciiArt[i].Length; j++)
+                    {
+                        Console.Write(asciiArt[i][j]);
+                    }
+                    Thread.Sleep(1);
+                    Console.WriteLine();
+                }
+                Util.PressAnyKey("화면 전환 중...");
                 Console.Clear();
             }
+
 
         }
     }

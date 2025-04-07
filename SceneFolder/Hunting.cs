@@ -1,8 +1,9 @@
 ﻿namespace KGA_OOPConsoleProject.SceneFolder
 {
-    internal class Hunting : Scene
+    public class Hunting : Scene
     {
         private ConsoleKey input;
+        public Monster monster;
         public override void Render()
         {
             Console.WriteLine("현재 위치는 사냥터입니다.");
@@ -18,19 +19,26 @@
             switch (input)
             {
                 case ConsoleKey.D1:
+                    monster = MonsterFactory.CreateMonster(1);//0-2 초급 3-5 중급 6-7 고급 8-11 보스방은 따로있음                   
                     break;
                 case ConsoleKey.D2:
+                    monster = MonsterFactory.CreateMonster(2);
                     break;
                 case ConsoleKey.D3:
+                    monster = MonsterFactory.CreateMonster(3);
                     break;
                 default:
                     break;
             }
+            
         }
         public override void Result()
-        {
-
+        { 
+            Game.monster = monster;
+            Game.ChangeScene("Battle");
+            Util.Transition(3);
         }
+
 
 
     }

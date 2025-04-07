@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace KGA_OOPConsoleProject
 {
-    internal class Town : Scene
+    public class Town : Scene
     {
         private ConsoleKey input;
         private bool isFirst = true;
+        //private Player player;
         public override void Render()
         {
             if (isFirst)//처음만 발생하는 이벤트
@@ -17,7 +18,7 @@ namespace KGA_OOPConsoleProject
                 Console.WriteLine("당신의 모험은 이제 막 시작되었다...");
                 Console.WriteLine("뉴비핥는아저씨가 나타나서 당신에게 소매넣기를 했습니다.");
                 Console.WriteLine("100골드를 획득했습니다.");
-                //TODO 100골드 추가하는 코드
+                Game.player.AddGold(100);
                 Util.PressAnyKey();
                 isFirst = false;
             }

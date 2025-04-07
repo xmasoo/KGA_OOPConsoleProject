@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KGA_OOPConsoleProject
 {
-    internal class HuntingGround : Scene
+    public class HuntingGround : Scene
     {
         private ConsoleKey input;
         public override void Render()
@@ -31,7 +31,7 @@ namespace KGA_OOPConsoleProject
                     Game.ChangeScene("Hunting");
                     break;
                 case ConsoleKey.D2:
-                    //TODO 보스 도전하는 코드
+                    Game.ChangeScene("Boss");
                     break;
                 case ConsoleKey.D3:
                     Game.ChangeScene("Town");

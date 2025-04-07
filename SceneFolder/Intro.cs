@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KGA_OOPConsoleProject
 {
-    internal class Intro : Scene
+    public class Intro : Scene
     {
         public override void Render()
         {

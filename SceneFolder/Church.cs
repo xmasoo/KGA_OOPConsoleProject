@@ -1,6 +1,6 @@
 ﻿namespace KGA_OOPConsoleProject
 {
-    internal class Church : Scene
+    public class Church : Scene
     {
         private ConsoleKey input;
         public override void Render()

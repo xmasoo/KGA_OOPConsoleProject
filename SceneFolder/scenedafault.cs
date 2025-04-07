@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KGA_OOPConsoleProject
 {
-    internal class Scenedafault : Scene
+    public class Scenedafault : Scene
     {
         private ConsoleKey input;
         public override void Render()
