@@ -17,7 +17,7 @@ namespace KGA_OOPConsoleProject
         public int Gold { get; private set; }
 
         public Inventory Inventory { get; }
-        public Inventory EquipInventory { get; }
+        public Inventory EquipInventory { get; set; }
 
         public Player() 
         { 
@@ -74,16 +74,20 @@ namespace KGA_OOPConsoleProject
             Gold += amount;
             Console.WriteLine($"{amount}골드를 획득했습니다.");
         }
-        public void SpendGold(int amount)
+        public bool SpendGold(int amount)
         {
             if (Gold >= amount)
             {
                 Gold -= amount;
+                Util.DeleteLine();
                 Console.WriteLine($"{amount}골드를 사용했습니다.");
+                return true;
             }
             else
             {
+                Util.DeleteLine();
                 Console.WriteLine("골드가 부족합니다.");
+                return false;
             }
         }
         public void ShowStatus()

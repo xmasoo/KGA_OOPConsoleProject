@@ -17,14 +17,14 @@ namespace KGA_OOPConsoleProject
             {
                 Console.WriteLine("당신의 모험은 이제 막 시작되었다...");
                 Console.WriteLine("뉴비핥는아저씨가 나타나서 당신에게 소매넣기를 했습니다.");
-                Console.WriteLine("100골드를 획득했습니다.");
-                Game.player.AddGold(100);
+                Console.WriteLine("1000골드를 획득했습니다.");
+                Game.player.AddGold(1000);
                 Util.PressAnyKey();
                 isFirst = false;
             }
             Console.WriteLine("현재 위치는 마을입니다.");
             Console.WriteLine("이동할 장소를 고르세요");
-            Console.Write("1. 상점 \t 2. 성당 \t 3. 사냥터");
+            Console.WriteLine("1. 상점 \t 2. 성당 \t 3. 사냥터");
         }
         public override void Input()
         {

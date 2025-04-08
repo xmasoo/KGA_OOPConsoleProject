@@ -23,6 +23,7 @@
             switch (input)
             {
                 case ConsoleKey.D1:
+                    Console.WriteLine("사제가 당신을 치유해줍니다.");
                     Game.player.Heal(Game.player.MaxHP);
                     break;
                 case ConsoleKey.D2:

@@ -8,7 +8,13 @@
             Console.ReadKey(true);
             Console.WriteLine();
         }
-
+        public static void DeleteLine()//특정 줄만 지우고 싶을 때
+        {
+            int cursorPosy = Console.CursorTop;
+            Console.SetCursorPosition(0, cursorPosy);
+            Console.Write(new string(' ', Console.WindowWidth));
+            Console.SetCursorPosition(0, cursorPosy);
+        }
         public static void Transition(int a)//화면전환
         {
             if (a == 1)

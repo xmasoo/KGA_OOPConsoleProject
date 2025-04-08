@@ -13,7 +13,7 @@ namespace KGA_OOPConsoleProject
         {
             Console.WriteLine("현재 위치는 입니다.");
             Console.WriteLine("세요");
-            Console.Write("1.  \t 2.  \t 3. ");
+            Console.WriteLine("1.  \t 2.  \t 3. ");
         }
         public override void Input()
         {

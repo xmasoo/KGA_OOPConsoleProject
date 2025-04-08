@@ -2,36 +2,36 @@
 {
     public class Inventory
     {
-        private List<Item> items;
+        private List<Item> items {  get; set; }
         private int maxSize;
+        public int Count { get { return items.Count; } }
         public Inventory(int maxSize)
         {
             this.maxSize = maxSize;
             items = new List<Item>();
+        }
+        public Item this[int index]
+        {
+            get { return items[index]; }
+            set { items[index] = value; }
         }
         public void AddItem(Item item)
         {
             if (items.Count < maxSize)
             {
                 items.Add(item);
-                Console.WriteLine($"{item.Name}이(가) 인벤토리에 추가되었습니다.");
+                Console.WriteLine($"{item.Name}이/가 인벤토리에 추가되었습니다.");
             }
             else
             {
+                Util.DeleteLine();
                 Console.WriteLine("인벤토리가 가득 찼습니다.");
             }
         }
-        public void RemoveItem(Item item)
+        public void RemoveItem(int index)
         {
-            if (items.Contains(item))
-            {
-                items.Remove(item);
-                Console.WriteLine($"{item.Name}이(가) 인벤토리에서 제거되었습니다.");
-            }
-            else
-            {
-                Console.WriteLine("인벤토리에 해당 아이템이 없습니다.");
-            }
+            Console.WriteLine($"아이템 {items[index].Name} 이/가 제거되었습니다.");
+            items.RemoveAt(index);
         }
         public void ShowItems()
         {
@@ -54,5 +54,6 @@
                 Console.WriteLine("인벤토리가 비어 있습니다.");
             }
         }
+
     }
 }

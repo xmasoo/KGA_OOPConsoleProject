@@ -10,6 +10,8 @@ namespace KGA_OOPConsoleProject
         public static Player player;
         public static int bossCount;
         public static Monster monster;
+        public static Inventory inventory;
+        public static Inventory equipInventory;
         public static void ChangeScene(string sceneName)
         {
             currentScene = sceneDic[sceneName];
@@ -30,9 +32,11 @@ namespace KGA_OOPConsoleProject
             sceneDic.Add("Shop", new Shop());
             sceneDic.Add("Boss", new Boss());
             sceneDic.Add("Battle", new Battle());
+            sceneDic.Add("ShopBuying", new ShopBuying());
+            sceneDic.Add("ShopSelling", new ShopSelling());
 
             player = new Player();
-
+            inventory = new Inventory(6);
             currentScene = sceneDic["Title"];
 
             bossCount = 0;

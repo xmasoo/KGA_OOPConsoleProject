@@ -7,7 +7,7 @@
         {
             Console.WriteLine("현재 위치는 사냥터입니다.");
             Console.WriteLine("무엇을 하시겠습니까?");
-            Console.Write("1. 사냥하기 \t 2. 보스 도전 \t 3. 마을로 돌아가기");
+            Console.WriteLine("1. 사냥하기 \t 2. 보스 도전 \t 3. 마을로 돌아가기");
         }
         public override void Input()
         {

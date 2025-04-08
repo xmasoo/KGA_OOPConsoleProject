@@ -11,9 +11,11 @@ namespace KGA_OOPConsoleProject
         private ConsoleKey input;
         public override void Render()
         {
+            Console.WriteLine("\"없는 거 빼고 다 있다네\"");
+            Console.WriteLine();
             Console.WriteLine("현재 위치는 상점입니다.");
             Console.WriteLine("무엇을 하시겠습니까?");
-            Console.Write("1. 구매 \t 2. 판매 \t 3. 강도 \t 4. 마을로 돌아가기");
+            Console.WriteLine("1. 구매 \t 2. 판매 \t 3. 마을로 돌아가기");
         }
         public override void Input()
         {
@@ -28,15 +30,14 @@ namespace KGA_OOPConsoleProject
             switch (input)
             {
                 case ConsoleKey.D1:
-                    //TODO 구매하는 코드
+                    Game.ChangeScene("ShopBuying");
                     break;
                 case ConsoleKey.D2:
-                    //TODO 판매하는 코드
+                    Game.ChangeScene("ShopSelling");
                     break;
                 case ConsoleKey.D3:
-                    //TODO 강도당하는 코드
-                    break;
-                case ConsoleKey.D4:
+                    Console.WriteLine("마을로 돌아갑니다.");
+                    Util.PressAnyKey();
                     Game.ChangeScene("Town");
                     break;
                 default:

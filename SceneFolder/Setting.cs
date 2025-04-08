@@ -55,7 +55,7 @@
                     break;
                 case ConsoleKey.S:
                 case ConsoleKey.DownArrow:
-                    cursorPos = cursorPos % 6 + 2;
+                    cursorPos = cursorPos == 6 ? 2 : cursorPos + 2;
                     break;
                 case ConsoleKey.A:
                 case ConsoleKey.LeftArrow:
