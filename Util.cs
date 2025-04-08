@@ -18,7 +18,7 @@
                 System.Threading.Thread.Sleep(1000);
                 Console.Clear();
             }
-            else if (a == 2)
+            else if (a == 2)//메인화면전환
             {
                 string[] asciiArt = new string[]
                         {

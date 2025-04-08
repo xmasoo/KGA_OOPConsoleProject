@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace KGA_OOPConsoleProject
+﻿namespace KGA_OOPConsoleProject
 {
     public class HuntingGround : Scene
     {
@@ -21,7 +15,7 @@ namespace KGA_OOPConsoleProject
         }
         public override void Update()
         {
-            
+
         }
         public override void Result()
         {
@@ -34,11 +28,13 @@ namespace KGA_OOPConsoleProject
                     Game.ChangeScene("Boss");
                     break;
                 case ConsoleKey.D3:
+                    Console.WriteLine("마을로 돌아갑니다.");
                     Game.ChangeScene("Town");
                     break;
                 default:
                     break;
             }
+            Util.PressAnyKey();
         }
 
     }

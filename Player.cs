@@ -8,75 +8,49 @@ namespace KGA_OOPConsoleProject
 {
     public class Player
     {
-        private int maxHP;
-        public int MaxHP { get { return maxHP; } }
+        public int MaxHP { get; private set; }
+        public int CurrentHP { get; private set; }
+        public int AttackPower { get; private set; }
+        public int DefensePower { get; private set; }
+        public int Level { get; private set; }
+        public int Exp { get; private set; }
+        public int Gold { get; private set; }
 
-        private int currentHP;
-        public int CurrentHP { get { return currentHP; } set { currentHP = value; } }
-
-
-        private int attackPower;
-        public int AttackPower { get { return attackPower; } set { attackPower = value; } }
-
-
-        private int defensePower;
-        public int DefensePower { get { return defensePower; } set { defensePower = value; } }
-
-
-        private int level;
-        public int Level { get { return level; } set { level = value; } }
-
-
-        private int exp;
-        public int Exp { get { return exp; } set { exp = value; } }
-
-
-        private int gold;
-        public int Gold { get { return gold; } set { gold = value; } }
-
-
-        private Inventory inventory;
-        public Inventory Inventory { get { return inventory; } }
-
-
-        private Inventory equipInventory;
-        public Inventory EquipInventory { get { return equipInventory; } }
+        public Inventory Inventory { get; }
+        public Inventory EquipInventory { get; }
 
         public Player() 
         { 
-            inventory = new Inventory(6); // 인벤토리 최대 크기 6으로 설정
-            equipInventory = new Inventory(2); // 장비 인벤토리 최대 크기 2으로 설정 무기, 방어구
-            maxHP = 100;
-            currentHP = maxHP;
-            attackPower = 10;
-            defensePower = 5;
-            level = 1;
+            Inventory = new Inventory(6); // 인벤토리 최대 크기 6으로 설정
+            EquipInventory = new Inventory(2); // 장비 인벤토리 최대 크기 2으로 설정 무기, 방어구
+            MaxHP = 100;
+            CurrentHP = MaxHP;
+            AttackPower = 10;
+            DefensePower = 5;
+            Level = 1;
             Exp = 0;
-            gold = 0;
+            Gold = 0;
         }
         public void Heal(int amount)
         {
-            currentHP += amount;
-            if (currentHP > maxHP)
+            CurrentHP += amount;
+            if (CurrentHP > MaxHP)
             {
-                currentHP = maxHP;
+                CurrentHP = MaxHP;
             }
+            Console.WriteLine($"체력이 {amount}만큼 회복되어 {CurrentHP}가 되었습니다.");
         }
         public void TakeDamage(int damage)
         {
-            currentHP -= damage;
-            if (currentHP < 0)
+            CurrentHP -= damage;
+            if (CurrentHP < 0)
             {
-                currentHP = 0;
+                CurrentHP = 0;
             }
         }
-        public void IsDead()
+        public bool IsDead()
         {
-            if (currentHP <= 0)
-            {
-                Console.WriteLine("플레이어가 죽었습니다.");
-                // 게임 오버 처리
-            }
+            return CurrentHP <= 0;           
         }
         public void GainExp(int amount)
         {
@@ -88,23 +62,23 @@ namespace KGA_OOPConsoleProject
         }
         private void LevelUp()
         {
-            level++;
+            Level++;
             Exp -= 100; // 레벨업 시 경험치 감소
-            maxHP += 10; // 레벨업 시 최대 HP 증가
-            attackPower += 2; // 레벨업 시 공격력 증가
-            defensePower += 1; // 레벨업 시 방어력 증가
-            Console.WriteLine($"레벨업! 현재 레벨: {level}");
+            MaxHP += 10; // 레벨업 시 최대 HP 증가
+            AttackPower += 2; // 레벨업 시 공격력 증가
+            DefensePower += 1; // 레벨업 시 방어력 증가
+            Console.WriteLine($"레벨업! 현재 레벨: {Level}");
         }
         public void AddGold(int amount)
         {
-            gold += amount;
+            Gold += amount;
             Console.WriteLine($"{amount}골드를 획득했습니다.");
         }
         public void SpendGold(int amount)
         {
-            if (gold >= amount)
+            if (Gold >= amount)
             {
-                gold -= amount;
+                Gold -= amount;
                 Console.WriteLine($"{amount}골드를 사용했습니다.");
             }
             else
@@ -114,11 +88,11 @@ namespace KGA_OOPConsoleProject
         }
         public void ShowStatus()
         {
-            Console.WriteLine($"레벨: {level}, HP: {currentHP}/{maxHP}, 공격력: {attackPower}, 방어력: {defensePower}, 경험치: {exp}, 골드: {gold}");
+            Console.WriteLine($"레벨: {Level}, HP: {CurrentHP}/{MaxHP}, 공격력: {AttackPower}, 방어력: {DefensePower}, 경험치: {Exp}, 골드: {Gold}");
         }
         public void ShowInventory()
         {
-            inventory.ShowItems();
+            Inventory.ShowItems();
         }
        
     }
