@@ -85,11 +85,9 @@ namespace KGA_OOPConsoleProject
             Console.WriteLine($"플레이어의 현재 골드: {Game.player.Gold}");
             if (monster.IsBoss()) Game.bossCount++;//보스라면 보스카운트 증가
             queue.Clear();//전투가 끝나면 큐를 초기화
-            Util.PressAnyKey();
             if (Game.bossCount == 4)
             {
                 Game.isRunning = false;
-                Util.PressAnyKey();
                 return;
             }
             else

@@ -55,16 +55,15 @@ namespace KGA_OOPConsoleProject
         {
             if(player.IsDead())
             {
-                Console.Clear();
-
+                Util.Transition("gameover");
                 Console.WriteLine("당신은 죽었습니다..");
-
+                Util.PressAnyKey();
             }
             else
             {
-                Console.Clear();
-
+                Util.Transition("clear");
                 Console.WriteLine("모든 보스를 처치했습니다. 게임 클리어!");
+                Util.PressAnyKey();
             }
         }
     }
