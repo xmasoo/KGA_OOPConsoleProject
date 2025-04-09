@@ -1,4 +1,6 @@
-﻿namespace KGA_OOPConsoleProject
+﻿using System;
+
+namespace KGA_OOPConsoleProject
 {
     public class Battle : Scene//세세하게 구현은 일단 나중에 우선은 서로 한 대 씩 때리기만 하게
     {
@@ -29,7 +31,7 @@
                     queue.Enqueue("monsterAttack");
                     break;
                     case ConsoleKey.D2:
-
+                    queue.Enqueue("playerItem");
                     break;
                 case ConsoleKey.D3:
                     queue.Enqueue("playerRun");
@@ -88,6 +90,33 @@
                             Console.WriteLine($"플레이어의 현재 체력: {Game.player.CurrentHP}");
                         }
                         break;
+                    case "playerItem":
+                        Console.WriteLine("사용할 아이템 번호를 고르세요 소비 아이템만 사용 가능합니다");
+                        Console.WriteLine("돌아가기 : 0");
+                        Game.inventory.ShowItems();
+                        input = Console.ReadKey(true).Key;
+                        if (input == ConsoleKey.D0) return;
+
+                        if ((int)input - 49 >= 0 && (int)input - 49 < Game.inventory.Count)
+                        {
+                            Item item = Game.inventory[(int)input - 49];
+                            if (!item.Equipable)
+                            {
+                                Game.player.EffectOn(item);
+                                Game.inventory.RemoveItem((int)input - 49);
+                            }
+                            else
+                            {
+                                Console.WriteLine("전투 중 장비를 장착할 수 없습니다.");
+                                Util.PressAnyKey();
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("잘못된 입력입니다.");
+                            Util.PressAnyKey();
+                        }                        
+                        break;
                     case "playerRun":
                         Console.WriteLine("플레이어가 도망쳤습니다.");
                         Game.ChangeScene("HuntingGround");
@@ -96,7 +125,6 @@
                     default:
                         break;
                 }
-                Util.PressAnyKey();
             }
         }
 

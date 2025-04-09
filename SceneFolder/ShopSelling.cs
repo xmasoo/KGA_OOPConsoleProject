@@ -10,10 +10,7 @@
             Console.WriteLine("현재 위치는 상점입니다.");
             Console.WriteLine("판매할 물건을 고르세요. 판매가는 구매가의 90%입니다.");
             Console.WriteLine("돌아가기 : 0");
-            for (int i = 0; i < Game.inventory.Count; i++)
-            {
-                Console.WriteLine($"{i + 1}. {Game.inventory[i].Name}");
-            }
+            Game.inventory.ShowItems();
         }
         public override void Input()
         {

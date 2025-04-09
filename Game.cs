@@ -36,9 +36,10 @@ namespace KGA_OOPConsoleProject
             sceneDic.Add("ShopSelling", new ShopSelling());
             sceneDic.Add("Maintenance", new Maintenance());
 
+            currentScene = sceneDic["Title"];
+
             player = new Player();
             inventory = new Inventory(6);
-            currentScene = sceneDic["Title"];
 
             equipInventory = new Inventory(2);
             equipInventory.AddItem(new Item("나뭇가지", "기본무기", 0, true, "공격력", 0));

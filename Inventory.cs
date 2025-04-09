@@ -39,9 +39,9 @@
             if (maxSize == 6)
             {
                 Console.WriteLine("인벤토리:");
-                foreach (var item in items)
+                for (int i = 0; i < items.Count; i++)
                 {
-                    Console.WriteLine($" - {item.Name} \t");
+                    Console.WriteLine($"{i + 1}. {items[i].Name}");
                 }
             }
             else if (maxSize == 2)

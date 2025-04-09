@@ -8,7 +8,8 @@
             Console.WriteLine("장비 정비 중입니다.");
             Console.WriteLine("장비하거나 사용할 아이템을 고르세요.");
             Console.WriteLine("돌아가기 : 0");
-            Game.player.ShowInventory(1);
+            Console.WriteLine();
+            Game.equipInventory.ShowItems();
             Console.WriteLine();
             for (int i = 0; i < Game.inventory.Count; i++)
             {

@@ -139,10 +139,6 @@ namespace KGA_OOPConsoleProject
             Game.equipInventory.ShowItems();
             Game.inventory.ShowItems();
         }
-        public void ShowInventory(int a)//함수 오버로드 정수 매개변수 입력하면 장비만 보여주기
-        {
-            Console.WriteLine();
-            Game.equipInventory.ShowItems();
-        }
+
     }
 }
