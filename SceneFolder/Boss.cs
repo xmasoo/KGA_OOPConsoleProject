@@ -36,7 +36,6 @@
                 {
                     Console.WriteLine("대충 사천왕이 할만한 대사4");
                 }
-            Util.PressAnyKey();
             }
         }
         public override void Result()

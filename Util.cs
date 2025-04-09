@@ -9,13 +9,14 @@
             Console.ReadKey(true);
             Console.WriteLine();
         }
-        public static void DeleteLine()//특정 줄만 지우고 싶을 때
+        public static void DeleteLine()//특정 줄만 지우고 싶을 때 만들었는데 굳이 안쓰는듯
         {
             int cursorPosy = Console.CursorTop;
             Console.SetCursorPosition(0, cursorPosy);
             Console.Write(new string(' ', Console.WindowWidth));
             Console.SetCursorPosition(0, cursorPosy);
         }
+
         public static void Transition(string a)//화면전환
         {
             string[] asciiArt = null;

@@ -10,6 +10,7 @@
         private Item[,] shopItem;
         int y;//y = cursorPosy - m 이거 매번쓰기 싫어서
         int x;//x = cursorPosx / n 이거 매번쓰기 싫어서
+        public static int payedGold = 0;//상점에 쓴 골드양
         public override void Render()
         {
             y = cursorPosy - m;
@@ -113,7 +114,11 @@
                 Console.WriteLine("인벤토리가 가득 찼습니다.");
             else
                 isPayed = Game.player.SpendGold(shopItem[y, x].Price);
-            if (isPayed) Game.inventory.AddItem(shopItem[y, x]);
+            if (isPayed)
+            {
+                Game.inventory.AddItem(shopItem[y, x]);
+                payedGold += shopItem[y, x].Price;
+            }
             Util.PressAnyKey();
         }
     }

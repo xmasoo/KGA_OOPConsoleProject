@@ -35,6 +35,7 @@ namespace KGA_OOPConsoleProject
             sceneDic.Add("ShopBuying", new ShopBuying());
             sceneDic.Add("ShopSelling", new ShopSelling());
             sceneDic.Add("Maintenance", new Maintenance());
+            sceneDic.Add("Gamble", new Gamble());
 
             currentScene = sceneDic["Title"];
 
