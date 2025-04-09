@@ -16,10 +16,10 @@
             Console.Write(new string(' ', Console.WindowWidth));
             Console.SetCursorPosition(0, cursorPosy);
         }
-        public static void Transition(int a)//화면전환
+        public static void Transition(string a)//화면전환
         {
             string[] asciiArt = null;
-            if (a == 2)//메인화면전환
+            if (a == "main")//메인화면전환
             {
                 asciiArt = new string[]
                         {
@@ -32,7 +32,7 @@
                             " ##   ##  ##        ###### "
                         };        
             }
-            else if (a == 3)//전투화면전환
+            else if (a == "battle")//전투화면전환
             {
                 asciiArt = new string[]
                 {

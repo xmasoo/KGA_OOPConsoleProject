@@ -8,8 +8,8 @@
         {
             Console.WriteLine("현재 위치는 사냥터입니다.");
             Console.WriteLine("사냥할 난이도를 고르세요");
-            Console.WriteLine("1. 초급(LV10이하 추천) \t 2. 중급(LV10이상 추천) \t 3. 고급(LV20이상 추천)");
             Console.WriteLine("돌아가기 : 0");
+            Console.WriteLine("1. 초급(LV10이하 추천) \t 2. 중급(LV10이상 추천) \t 3. 고급(LV20이상 추천)");
         }
         public override void Input()
         {
@@ -42,7 +42,7 @@
                 case ConsoleKey.D3:
                     Game.monster = monster;
                     Game.ChangeScene("Battle");
-                    Util.Transition(3);
+                    Util.Transition("battle");
                     break;
                 case ConsoleKey.D0:
                     Console.WriteLine();
