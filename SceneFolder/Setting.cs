@@ -9,14 +9,14 @@
         public override void Render()
         {
             Console.WriteLine("설정");
-            Console.WriteLine("  1    option1      10");
+            Console.WriteLine("초기 체력 : {0}",Game.player.MaxHP);
             PrintGauge(option1Count);
-            Console.WriteLine("  1    option2      10");
+            Console.WriteLine("초기 골드 : {0}", Game.player.Gold);
             PrintGauge(option2Count);
             Console.WriteLine();
             Console.WriteLine("  뒤로가기");
             Console.WriteLine();
-            Console.WriteLine("아직은 의미없는 기능 나중에 추가하면 추가설명");
+            Console.WriteLine("초기 체력과 골드를 설정해 난이도를 조절할 수 있습니다.");
             Console.WriteLine("아무 지점에서나 0을 누르거나 뒤로가기에 커서를 두고 스페이스바를 누르면 타이틀로 돌아갑니다.");
 
             PrintCursor();
@@ -59,13 +59,13 @@
                     break;
                 case ConsoleKey.A:
                 case ConsoleKey.LeftArrow:
-                    if (cursorPos == 2 && option1Count > 1) option1Count--;
-                    else if (cursorPos == 4 && option2Count > 1) option2Count--;
+                    if (cursorPos == 2 && option1Count > 0) { option1Count--; Game.player.MaxHP -= 10; Game.player.CurrentHP = Game.player.MaxHP; }
+                    else if (cursorPos == 4 && option2Count > 0) { option2Count--; Game.player.Gold -= 10; }
                     break;
                 case ConsoleKey.D:
                 case ConsoleKey.RightArrow:
-                    if (cursorPos == 2 && option1Count < 10) option1Count++;
-                    else if (cursorPos == 4 && option2Count < 10) option2Count++;
+                    if (cursorPos == 2 && option1Count < 10) { option1Count++; Game.player.MaxHP += 10; Game.player.CurrentHP = Game.player.MaxHP; }
+                    else if (cursorPos == 4 && option2Count < 10) { option2Count++; Game.player.Gold += 10; }
                     break;
             }
         }

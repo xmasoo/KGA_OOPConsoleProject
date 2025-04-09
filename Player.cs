@@ -8,13 +8,13 @@ namespace KGA_OOPConsoleProject
 {
     public class Player
     {
-        public int MaxHP { get; private set; }
-        public int CurrentHP { get; private set; }
+        public int MaxHP { get; set; }
+        public int CurrentHP { get; set; }
         public int AttackPower { get; private set; }
         public int DefensePower { get; private set; }
         public int Level { get; private set; }
         public int Exp { get; private set; }
-        public int Gold { get; private set; }
+        public int Gold { get; set; }
 
         public Player() 
         { 
@@ -24,7 +24,7 @@ namespace KGA_OOPConsoleProject
             DefensePower = 5;
             Level = 1;
             Exp = 0;
-            Gold = 0;
+            Gold = 50;
         }
         public void Heal(int amount)
         {
