@@ -23,7 +23,8 @@
         }
         public override void Update()
         {
-            if ((int)input <= Game.inventory.Count + 48 && (int)input > 48) EquipItem();
+            if ((int)input <= Game.inventory.Count + 48 && (int)input > 48)
+                EquipItem();
         }
         public override void Result()
         {
@@ -42,24 +43,17 @@
             Item temp;
             if (item.Equipable)
             {
-                if (item.Effect == "공격력")
-                {
-                    temp = Game.equipInventory[0];
-                    Game.equipInventory[0] = item;
-                    Game.player.EffectOn(item);
-                    Game.inventory.RemoveItem((int)input - 49);
-                    Game.player.EffectOff(temp);
-                    Game.inventory.AddItem(temp);
-                }
-                else if (item.Effect == "방어력")
-                {
-                    temp = Game.equipInventory[1];
-                    Game.equipInventory[1] = item;
-                    Game.player.EffectOn(item);
-                    Game.inventory.RemoveItem((int)input - 49);
-                    Game.player.EffectOff(temp);
-                    Game.inventory.AddItem(temp);
-                }
+                int n = 5;
+                if (item.Effect == "공격력") n = 0;
+                else if (item.Effect == "방어력") n = 1;
+
+                temp = Game.equipInventory[n];
+                Game.equipInventory[n] = item;
+                Game.player.EffectOn(item);
+                Game.inventory.RemoveItem((int)input - 49);
+                Game.player.EffectOff(temp);
+                Game.inventory.AddItem(temp);
+
             }
             else if (!item.Equipable)
             {

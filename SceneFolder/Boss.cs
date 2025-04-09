@@ -7,7 +7,7 @@
         {
             Console.WriteLine("현재 위치는 보스방입니다.");
             Console.WriteLine("보스에게 도전하시겠습니까?");
-            Console.WriteLine("1. 네 \t 2. ㅌㅌ ");
+            Console.WriteLine("1. 네 \t 2. 아직 준비가 덜 됐어 ");
         }
         public override void Input()
         {

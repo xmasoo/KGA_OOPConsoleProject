@@ -57,6 +57,7 @@ namespace KGA_OOPConsoleProject
                 Console.Clear();
 
                 Console.WriteLine("당신은 죽었습니다..");
+
             }
             else
             {
