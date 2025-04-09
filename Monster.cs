@@ -56,6 +56,10 @@
         {
             return CurrentHP <= 0;
         }
+        public bool IsBoss()
+        {
+            return MonsterFactory.monsterNum >= 9;
+        }
         public void ShowStatus()
         {
             Console.WriteLine($"이름 : {Name} 레벨: {Level}, HP: {CurrentHP}/{MaxHP}, 공격력: {AttackPower}, 방어력: {DefensePower}");

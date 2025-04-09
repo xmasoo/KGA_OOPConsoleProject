@@ -17,13 +17,13 @@
             shopItem = new Item[3, 3];
             shopItem[0, 0] = new Item("나무 검", "보통 검이다", 100,true,"공격력",3);
             shopItem[0, 1] = new Item("철 검", "단단한 검이다", 200, true, "공격력", 5);
-            shopItem[0, 2] = new Item("티타늄 검", "단단하고 가벼워서 휘두르기 좋다", 300, true, "공격력", 10);
+            shopItem[0, 2] = new Item("티타늄 검", "단단하고 가벼워서 휘두르기 좋다", 300, true, "공격력", 500);
             shopItem[1, 0] = new Item("나무 방패", "보통 방패다", 100, true, "방어력", 3);
             shopItem[1, 1] = new Item("철 방패", "단단한 방패다", 200, true, "방어력", 5);
             shopItem[1, 2] = new Item("아이언맨 슈트", "어중간한 공격으로는 흡집도 나지 않을 거 같다", 300, true, "방어력", 10);
             shopItem[2, 0] = new Item("포션", "먹으면 체력이 회복된다", 50, false, "heal", 30);
             shopItem[2, 1] = new Item("엘릭서", "먹으면 체력이 50퍼센트 회복된다", 200, false, "heal%", 50);
-            shopItem[2, 2] = new Item("사탕", "달다", 300, false, "hp", 10);
+            shopItem[2, 2] = new Item("사탕", "달다", 300, false, "체력", 20);
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine("현재 위치는 상점입니다.");

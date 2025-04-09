@@ -17,8 +17,7 @@ namespace KGA_OOPConsoleProject
             {
                 Console.WriteLine("당신의 모험은 이제 막 시작되었다...");
                 Console.WriteLine("뉴비핥는아저씨가 나타나서 당신에게 소매넣기를 했습니다.");
-                Console.WriteLine("1000골드를 획득했습니다.");
-                Game.player.AddGold(1000);
+                Game.player.AddGold(5000);
                 Util.PressAnyKey();
                 isFirst = false;
             }

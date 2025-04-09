@@ -26,16 +26,16 @@ namespace KGA_OOPConsoleProject
                 Console.WriteLine("나는 사천왕 뭐시기");
                 Console.WriteLine("대충 사천왕이 할만한 대사1");
             }
-            else if (Game.bossCount == 0)
+            else if (Game.bossCount == 1)
             {
                 Console.WriteLine("크큭 그놈은 사천왕중 최약체");
                 Console.WriteLine("대충 사천왕이 할만한 대사2");
             }
-            else if (Game.bossCount == 0)
+            else if (Game.bossCount == 2)
             {
                 Console.WriteLine("대충 사천왕이 할만한 대사3");
             }
-            else if (Game.bossCount == 0)
+            else if (Game.bossCount == 3)
             {
                 Console.WriteLine("대충 사천왕이 할만한 대사4");
             }

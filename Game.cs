@@ -41,10 +41,8 @@ namespace KGA_OOPConsoleProject
             currentScene = sceneDic["Title"];
 
             equipInventory = new Inventory(2);
-            Item defaultatk = new Item("나뭇가지", "기본무기", 0, true, "공격력", 0);
-            Item defaultdef = new Item("나무판떼기", "기본방어구", 0, true, "방어력", 0);
-            equipInventory.AddItem(defaultatk);
-            equipInventory.AddItem(defaultdef);
+            equipInventory.AddItem(new Item("나뭇가지", "기본무기", 0, true, "공격력", 0));
+            equipInventory.AddItem(new Item("나무판떼기", "기본방어구", 0, true, "방어력", 0));
 
             bossCount = 0;
 
@@ -53,7 +51,18 @@ namespace KGA_OOPConsoleProject
 
         public static void End()
         {
-            Console.WriteLine("게임 클리어!");
+            if(player.IsDead())
+            {
+                Console.Clear();
+
+                Console.WriteLine("당신은 죽었습니다..");
+            }
+            else
+            {
+                Console.Clear();
+
+                Console.WriteLine("모든 보스를 처치했습니다. 게임 클리어!");
+            }
         }
     }
 }

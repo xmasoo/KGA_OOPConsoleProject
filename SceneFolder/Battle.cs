@@ -46,16 +46,17 @@
                         if (monster.IsDead())
                         {
                             Console.WriteLine($"{monster.Name}이(가) 죽었습니다.");
-                            Console.WriteLine($"{monster.Exp} 경험치와 {monster.Gold} 골드를 획득합니다.");
+                            Console.WriteLine($"{monster.Exp} 경험치를 획득합니다.");
                             Game.player.GainExp(monster.Exp);
                             Game.player.AddGold(monster.Gold);
                             Console.WriteLine($"플레이어의 현재 경험치: {Game.player.Exp}");
                             Console.WriteLine($"플레이어의 현재 골드: {Game.player.Gold}");
+                            if (monster.IsBoss()) Game.bossCount++;//보스라면 보스카운트 증가
+                            queue.Clear();//전투가 끝나면 큐를 초기화
                             Util.PressAnyKey();
-                            if (Game.bossCount == 3)
-                            {
-                                Console.WriteLine("모든 보스를 처치했습니다. 게임 클리어!");
-                                Game.End();
+                            if (Game.bossCount == 4)
+                            {                               
+                                Game.isRunning = false;
                                 Util.PressAnyKey();
                                 return;
                             }
@@ -75,8 +76,7 @@
                         Console.WriteLine($"{monster.Name}이/가 플레이어에게 {monster.AttackPower}의 피해를 입혔습니다.");
                         if (Game.player.IsDead())
                         {
-                            Console.WriteLine("당신은 죽었습니다.");
-                            Game.ChangeScene("End");
+                            Game.isRunning = false;
                             return;
                         }
                         else

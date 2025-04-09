@@ -50,9 +50,12 @@ namespace KGA_OOPConsoleProject
         public void GainExp(int amount)
         {
             Exp += amount;
-            if (Exp >= 100) // 레벨업 조건
+            while (Exp > 100)
             {
-                LevelUp();
+                if (Exp >= 100) // 레벨업 조건
+                {
+                    LevelUp();
+                }
             }
         }
         private void LevelUp()
