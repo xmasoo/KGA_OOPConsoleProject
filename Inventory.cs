@@ -2,7 +2,7 @@
 {
     public class Inventory
     {
-        private List<Item> items {  get; set; }
+        private List<Item> items { get; set; }
         private int maxSize;
         public int Count { get { return items.Count; } }
         public Inventory(int maxSize)
@@ -26,31 +26,48 @@
             {
                 Util.DeleteLine();
                 Console.WriteLine("인벤토리가 가득 찼습니다.");
+                Util.DeleteLine();
             }
         }
         public void RemoveItem(int index)
         {
-            Console.WriteLine($"아이템 {items[index].Name} 이/가 제거되었습니다.");
+            //Console.WriteLine($"아이템 {items[index].Name} 이/가 제거되었습니다.");
             items.RemoveAt(index);
         }
         public void ShowItems()
         {
             if (maxSize == 6)
             {
+                int n = 0;
                 Console.WriteLine("인벤토리:");
+                Console.Write(" ");
                 foreach (var item in items)
                 {
-                    Console.WriteLine($"- {item.Name}");
+                    Console.Write($"- {item.Name} \t");
+                    n++;
+                    if (n == 3)
+                    {
+                        Console.WriteLine();
+                        Console.Write(" ");
+                        n = 0;
+                    }
                 }
             }
             else if (maxSize == 2)
             {
-                Console.WriteLine("장비 인벤토리:");
-                Console.WriteLine($"무기 - {items[0]}");
-                Console.WriteLine($"방어구 - {items[1]}");
+                if (items.Count > 0 && items[0] != null)
+                    Console.WriteLine($"무기 - {items[0].Name}");
+                else
+                    Console.WriteLine("무기 - 없음");
+
+                if (items.Count > 0 && items[1] != null)
+                    Console.WriteLine($"방어구 - {items[1].Name}");
+                else
+                    Console.WriteLine("방어구 - 없음");
             }
             else
             {
+                Util.DeleteLine();
                 Console.WriteLine("인벤토리가 비어 있습니다.");
             }
         }

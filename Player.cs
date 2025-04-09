@@ -16,13 +16,8 @@ namespace KGA_OOPConsoleProject
         public int Exp { get; private set; }
         public int Gold { get; private set; }
 
-        public Inventory Inventory { get; }
-        public Inventory EquipInventory { get; set; }
-
         public Player() 
         { 
-            Inventory = new Inventory(6); // 인벤토리 최대 크기 6으로 설정
-            EquipInventory = new Inventory(2); // 장비 인벤토리 최대 크기 2으로 설정 무기, 방어구
             MaxHP = 100;
             CurrentHP = MaxHP;
             AttackPower = 10;
@@ -90,14 +85,56 @@ namespace KGA_OOPConsoleProject
                 return false;
             }
         }
+
+        public void EffectOn(Item item)//아이템 장착 혹은 사용했을 때 스테이터스 변동
+        {
+            string s;
+            s = item.Equipable ? "장착" : "사용";
+            Console.WriteLine($"{item.Name}을 {s}하여 플레이어의 {item.Effect}이(가) {item.EffectValue}만큼 상승했습니다!");
+            switch(item.Effect)
+            {
+                case "공격력":
+                    AttackPower += item.EffectValue;
+                    break;
+                case "방어력":
+                    DefensePower += item.EffectValue;
+                    break;
+                case "체력":
+                    MaxHP += item.EffectValue;
+                    break;
+            }
+            Util.PressAnyKey();
+        }
+
+        public void EffectOff(Item item)// 아이템을 해제했을 때 
+        {
+            Console.WriteLine($"{item.Name}을 탈착해서 플레이어의 {item.Effect}이(가) {item.EffectValue}만큼 하락했습니다!");
+            switch (item.Effect)
+            {
+                case "공격력":
+                    AttackPower -= item.EffectValue;
+                    break;
+                case "방어력":
+                    DefensePower -= item.EffectValue;
+                    break;
+            }
+            Util.PressAnyKey();
+        }
         public void ShowStatus()
         {
+            Console.WriteLine();
             Console.WriteLine($"레벨: {Level}, HP: {CurrentHP}/{MaxHP}, 공격력: {AttackPower}, 방어력: {DefensePower}, 경험치: {Exp}, 골드: {Gold}");
         }
         public void ShowInventory()
         {
-            Inventory.ShowItems();
+            Console.WriteLine();
+            Game.equipInventory.ShowItems();
+            Game.inventory.ShowItems();
         }
-       
+        public void ShowInventory(int a)//임시 장비만 보여주기용으로
+        {
+            Console.WriteLine();
+            Game.equipInventory.ShowItems();
+        }
     }
 }

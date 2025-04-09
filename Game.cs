@@ -26,7 +26,7 @@ namespace KGA_OOPConsoleProject
             sceneDic.Add("Intro", new Intro());
             sceneDic.Add("Setting", new Setting());
             sceneDic.Add("Town", new Town());
-            sceneDic.Add("Church", new Church());
+            sceneDic.Add("INN", new INN());
             sceneDic.Add("HuntingGround", new HuntingGround());
             sceneDic.Add("Hunting", new Hunting());
             sceneDic.Add("Shop", new Shop());
@@ -34,10 +34,17 @@ namespace KGA_OOPConsoleProject
             sceneDic.Add("Battle", new Battle());
             sceneDic.Add("ShopBuying", new ShopBuying());
             sceneDic.Add("ShopSelling", new ShopSelling());
+            sceneDic.Add("Maintenance", new Maintenance());
 
             player = new Player();
             inventory = new Inventory(6);
             currentScene = sceneDic["Title"];
+
+            equipInventory = new Inventory(2);
+            Item defaultatk = new Item("나뭇가지", "기본무기", 0, true, "공격력", 0);
+            Item defaultdef = new Item("나무판떼기", "기본방어구", 0, true, "방어력", 0);
+            equipInventory.AddItem(defaultatk);
+            equipInventory.AddItem(defaultdef);
 
             bossCount = 0;
 

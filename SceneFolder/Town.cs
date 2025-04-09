@@ -24,7 +24,7 @@ namespace KGA_OOPConsoleProject
             }
             Console.WriteLine("현재 위치는 마을입니다.");
             Console.WriteLine("이동할 장소를 고르세요");
-            Console.WriteLine("1. 상점 \t 2. 성당 \t 3. 사냥터");
+            Console.WriteLine("1. 상점 \t 2. 여관 \t 3. 사냥터");
         }
         public override void Input()
         {
@@ -42,7 +42,7 @@ namespace KGA_OOPConsoleProject
                     Game.ChangeScene("Shop");
                     break;
                 case ConsoleKey.D2:
-                    Game.ChangeScene("Church");
+                    Game.ChangeScene("INN");
                     break;
                 case ConsoleKey.D3:
                     Game.ChangeScene("HuntingGround");

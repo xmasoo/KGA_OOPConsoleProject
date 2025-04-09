@@ -1,23 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace KGA_OOPConsoleProject
+﻿namespace KGA_OOPConsoleProject
 {
     public class Item
     {
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public int Price { get; set; }
+        public string Name { get; private set; }
+        public string Description { get; private set; }
+        public int Price { get; private set; }
 
-        
-        public Item(string name, string description, int price)//아이템효과도 써야함 공격력증가 체력증가라던지
+        public bool Equipable { get;private set; }
+        public string Effect { get; private set; }
+        public int EffectValue { get; private set; }
+
+        public Item(string name, string description, int price, bool equipable, string effect, int effectvalue)
         {
             Name = name;
             Description = description;
             Price = price;
+            Equipable = equipable;//장착 가능하다면 true 아니면 false
+            Effect = effect;
+            // 공격력 방어력 체력 heal 등으로 표시
+            EffectValue = effectvalue;
         }
     }
 }
