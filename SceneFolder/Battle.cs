@@ -49,24 +49,17 @@ namespace KGA_OOPConsoleProject
                 {
                     case "playerAttack":
                         monster.TakeDamage(Game.player.AttackPower);
-                        Util.PressAnyKey();
                         if (monster.IsDead())
                             Reward();
-                        else
-                            Console.WriteLine($"{monster.Name}의 남은 체력: {monster.CurrentHP}");
+                        Util.PressAnyKey();
                         break;
                     case "monsterAttack":
                         Game.player.TakeDamage(monster.AttackPower);
-                        Console.WriteLine($"{monster.Name}이/가 플레이어에게 {monster.AttackPower}의 피해를 입혔습니다.");
                         Util.PressAnyKey();
                         if (Game.player.IsDead())
                         {
                             Game.isRunning = false;
                             return;
-                        }
-                        else
-                        {
-                            Console.WriteLine($"플레이어의 현재 체력: {Game.player.CurrentHP}");
                         }
                         break;
                     case "playerItem":
