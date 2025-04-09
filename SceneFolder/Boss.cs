@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace KGA_OOPConsoleProject
+﻿namespace KGA_OOPConsoleProject
 {
     public class Boss : Scene
     {
@@ -21,25 +15,29 @@ namespace KGA_OOPConsoleProject
         }
         public override void Update()
         {
-            if(Game.bossCount == 0)
+            if (input == ConsoleKey.D1)
             {
-                Console.WriteLine("나는 사천왕 뭐시기");
-                Console.WriteLine("대충 사천왕이 할만한 대사1");
-            }
-            else if (Game.bossCount == 1)
-            {
-                Console.WriteLine("크큭 그놈은 사천왕중 최약체");
-                Console.WriteLine("대충 사천왕이 할만한 대사2");
-            }
-            else if (Game.bossCount == 2)
-            {
-                Console.WriteLine("대충 사천왕이 할만한 대사3");
-            }
-            else if (Game.bossCount == 3)
-            {
-                Console.WriteLine("대충 사천왕이 할만한 대사4");
-            }
+
+                if (Game.bossCount == 0)
+                {
+                    Console.WriteLine("나는 사천왕 뭐시기");
+                    Console.WriteLine("대충 사천왕이 할만한 대사1");
+                }
+                else if (Game.bossCount == 1)
+                {
+                    Console.WriteLine("크큭 그놈은 사천왕중 최약체");
+                    Console.WriteLine("대충 사천왕이 할만한 대사2");
+                }
+                else if (Game.bossCount == 2)
+                {
+                    Console.WriteLine("대충 사천왕이 할만한 대사3");
+                }
+                else if (Game.bossCount == 3)
+                {
+                    Console.WriteLine("대충 사천왕이 할만한 대사4");
+                }
             Util.PressAnyKey();
+            }
         }
         public override void Result()
         {
@@ -47,7 +45,7 @@ namespace KGA_OOPConsoleProject
             {
                 case ConsoleKey.D1:
                     Game.monster = MonsterFactory.CreateMonster(4);
-                    Game.ChangeScene("Battle");   
+                    Game.ChangeScene("Battle");
                     break;
                 case ConsoleKey.D2:
                     Console.WriteLine("사냥터로 돌아갑니다.");
@@ -56,7 +54,7 @@ namespace KGA_OOPConsoleProject
                 default:
                     break;
             }
-                    Util.PressAnyKey();
+            Util.PressAnyKey();
         }
 
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace KGA_OOPConsoleProject
 {
@@ -21,7 +22,7 @@ namespace KGA_OOPConsoleProject
             MaxHP = 100;
             CurrentHP = MaxHP;
             AttackPower = 10;
-            DefensePower = 5;
+            DefensePower = 2;
             Level = 1;
             Exp = 0;
             Gold = 50;
@@ -37,11 +38,10 @@ namespace KGA_OOPConsoleProject
         }
         public void TakeDamage(int damage)
         {
-            CurrentHP -= damage;
-            if (CurrentHP < 0)
-            {
-                CurrentHP = 0;
-            }
+            int actualDamage = Math.Max(1, damage - DefensePower);
+            CurrentHP -= actualDamage;
+            if (CurrentHP < 0) CurrentHP = 0;
+            Console.WriteLine($"플레이어는 {actualDamage}의 피해를 입었습니다! 남은 HP: {CurrentHP}");
         }
         public bool IsDead()
         {
@@ -63,6 +63,7 @@ namespace KGA_OOPConsoleProject
             Level++;
             Exp -= 100; // 레벨업 시 경험치 감소
             MaxHP += 10; // 레벨업 시 최대 HP 증가
+            CurrentHP = MaxHP; // 레벨업 시 풀피
             AttackPower += 2; // 레벨업 시 공격력 증가
             DefensePower += 1; // 레벨업 시 방어력 증가
             Console.WriteLine($"레벨업! 현재 레벨: {Level}");
@@ -102,8 +103,12 @@ namespace KGA_OOPConsoleProject
                 case "방어력":
                     DefensePower += item.EffectValue;
                     break;
-                case "체력":
+                case "최대체력":
                     MaxHP += item.EffectValue;
+                    CurrentHP += item.EffectValue;
+                    break;
+                case "체력":
+                    Heal(item.EffectValue);
                     break;
             }
             Util.PressAnyKey();
@@ -134,7 +139,7 @@ namespace KGA_OOPConsoleProject
             Game.equipInventory.ShowItems();
             Game.inventory.ShowItems();
         }
-        public void ShowInventory(int a)//임시 장비만 보여주기용으로
+        public void ShowInventory(int a)//함수 오버로드 정수 매개변수 입력하면 장비만 보여주기
         {
             Console.WriteLine();
             Game.equipInventory.ShowItems();

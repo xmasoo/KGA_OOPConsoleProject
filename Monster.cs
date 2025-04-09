@@ -5,16 +5,16 @@
 
         public enum MonsterName
         {
-            Rabbit = 1,
-            Slime,
-            Wolf,
+            토끼 = 1,
+            슬라임,
+            늑대,
 
-            Goblin,
-            Orc,
-            Troll,
+            고블린,
+            오크,
+            트롤,
 
-            Vampire,
-            Cerberus,
+            뱀파이어,
+            케르베로스,
 
             Boss1,
             Boss2,

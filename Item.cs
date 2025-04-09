@@ -17,7 +17,7 @@
             Price = price;
             Equipable = equipable;//장착 가능하다면 true 아니면 false
             Effect = effect;
-            // 공격력 방어력 체력 heal 등으로 표시
+            // 공격력 방어력 최대체력 체력 등으로 표시
             EffectValue = effectvalue;
         }
     }

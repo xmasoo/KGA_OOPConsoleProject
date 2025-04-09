@@ -27,29 +27,29 @@
             switch (monsterNum)
             {
                 case 1:
-                    return new Monster(Monster.MonsterName.Rabbit, 10, 4, 3, 3, 10, 15);
+                    return new Monster(Monster.MonsterName.토끼, 10, 4, 3, 3, 10, 15);
                 case 2:
-                    return new Monster(Monster.MonsterName.Slime, 10, 4, 3, 3, 10, 15);
+                    return new Monster(Monster.MonsterName.슬라임, 14, 3, 2, 3, 10, 15);
                 case 3:
-                    return new Monster(Monster.MonsterName.Wolf, 10, 4, 3, 3, 10, 15);//이름 체력 공격력 방어력 레벨 경험치 골드
+                    return new Monster(Monster.MonsterName.늑대, 17, 5, 3, 3, 10, 15);//이름 체력 공격력 방어력 레벨 경험치 골드
                 case 4:
-                    return new Monster(Monster.MonsterName.Goblin, 50, 6, 5, 5, 20, 25);
+                    return new Monster(Monster.MonsterName.고블린, 50, 10, 5, 10, 20, 25);
                 case 5:
-                    return new Monster(Monster.MonsterName.Orc, 50, 6, 5, 5, 20, 25);
+                    return new Monster(Monster.MonsterName.오크, 60, 16, 5, 10, 20, 25);
                 case 6:
-                    return new Monster(Monster.MonsterName.Troll, 50, 6, 5, 5, 20, 25);
+                    return new Monster(Monster.MonsterName.트롤, 70, 20, 3, 15, 20, 25);
                 case 7:
-                    return new Monster(Monster.MonsterName.Vampire, 70, 8, 7, 7, 40, 35);
+                    return new Monster(Monster.MonsterName.뱀파이어, 100, 30, 10, 20, 40, 50);
                 case 8:
-                    return new Monster(Monster.MonsterName.Cerberus, 70, 8, 7, 7, 40, 35);
+                    return new Monster(Monster.MonsterName.케르베로스, 120, 35, 15, 20, 40, 50);
                 case 9:
-                    return new Monster(Monster.MonsterName.Boss1, 100, 10, 9, 9, 70, 50);
+                    return new Monster(Monster.MonsterName.Boss1, 100, 20, 5, 10, 70, 150);
                 case 10:
-                    return new Monster(Monster.MonsterName.Boss2, 120, 12, 10, 10, 100, 60);
+                    return new Monster(Monster.MonsterName.Boss2, 150, 30, 10, 15, 100, 200);
                 case 11:
-                    return new Monster(Monster.MonsterName.Boss3, 150, 15, 12, 12, 120, 70);
+                    return new Monster(Monster.MonsterName.Boss3, 200, 40, 20, 20, 120, 300);
                 case 12:
-                    return new Monster(Monster.MonsterName.Boss4, 200, 20, 15, 15, 150, 100);
+                    return new Monster(Monster.MonsterName.Boss4, 250, 50, 25, 30, 150, 500);
                 default:
                     return null;
             }
