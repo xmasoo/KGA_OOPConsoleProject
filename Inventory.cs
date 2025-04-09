@@ -38,19 +38,10 @@
         {
             if (maxSize == 6)
             {
-                int n = 0;
                 Console.WriteLine("인벤토리:");
-                Console.Write(" ");
                 foreach (var item in items)
                 {
-                    Console.Write($"- {item.Name} \t");
-                    n++;
-                    if (n == 3)
-                    {
-                        Console.WriteLine();
-                        Console.Write(" ");
-                        n = 0;
-                    }
+                    Console.WriteLine($" - {item.Name} \t");
                 }
             }
             else if (maxSize == 2)

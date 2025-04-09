@@ -8,7 +8,6 @@
             Console.WriteLine("현재 위치는 여관입니다.");
             Console.WriteLine("무엇을 하시겠습니까?");
             Console.WriteLine("1. 휴식하기 \t 2. 정비하기 \t 3. 마을로 돌아가기");
-            Console.WriteLine();
         }
         public override void Input()
         {
@@ -40,6 +39,7 @@
                     Game.ChangeScene("Maintenance");
                     break;
                 case ConsoleKey.D3:
+                    Console.WriteLine();
                     Console.WriteLine("마을로 돌아갑니다.");
                     Util.PressAnyKey();
                     Game.ChangeScene("Town");

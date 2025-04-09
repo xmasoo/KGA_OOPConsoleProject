@@ -4,6 +4,7 @@
     {
         public static void PressAnyKey(string text = "아무 키나 입력하세요")
         {
+            Console.WriteLine();
             Console.WriteLine(text);
             Console.ReadKey(true);
             Console.WriteLine();
@@ -18,14 +19,7 @@
         public static void Transition(int a)//화면전환
         {
             string[] asciiArt = null;
-            if (a == 1)
-            {
-                Console.Clear();
-                Console.WriteLine("화면 전환 중...");
-                System.Threading.Thread.Sleep(1000);
-                Console.Clear();
-            }
-            else if (a == 2)//메인화면전환
+            if (a == 2)//메인화면전환
             {
                 asciiArt = new string[]
                         {
@@ -56,7 +50,7 @@
                 Console.WriteLine(asciiArt[i]);
                     Thread.Sleep(1);
                 }
-                Util.PressAnyKey("화면 전환 중...");
+                Util.PressAnyKey("화면 전환 중... 아무키나 입력하세요");
                 Console.Clear();
 
 

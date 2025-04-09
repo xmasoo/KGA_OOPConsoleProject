@@ -11,9 +11,10 @@
             monster = Game.monster;
 
             Console.WriteLine("전투 시작!");
-            Console.WriteLine("1. 공격 2. 도망");
+            Console.WriteLine("1. 공격 2. 아이템 사용 3. 도망");
             Game.player.ShowStatus();
             monster.ShowStatus();
+            Console.WriteLine();
         }
         public override void Input()
         {
@@ -27,7 +28,10 @@
                     queue.Enqueue("playerAttack");
                     queue.Enqueue("monsterAttack");
                     break;
-                case ConsoleKey.D2:
+                    case ConsoleKey.D2:
+
+                    break;
+                case ConsoleKey.D3:
                     queue.Enqueue("playerRun");
                     break;
                 default:

@@ -28,6 +28,7 @@
             switch (input)
             {
                 case ConsoleKey.D0:
+                    Console.WriteLine();
                     Console.WriteLine("상점으로 돌아갑니다.");
                     Util.PressAnyKey();
                     Game.ChangeScene("Shop");

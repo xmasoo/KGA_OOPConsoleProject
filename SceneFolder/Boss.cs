@@ -17,7 +17,7 @@
         {
             if (input == ConsoleKey.D1)
             {
-
+                Console.WriteLine();
                 if (Game.bossCount == 0)
                 {
                     Console.WriteLine("나는 사천왕 뭐시기");
@@ -45,16 +45,18 @@
             {
                 case ConsoleKey.D1:
                     Game.monster = MonsterFactory.CreateMonster(4);
+                    Util.PressAnyKey();
                     Game.ChangeScene("Battle");
                     break;
                 case ConsoleKey.D2:
+                    Console.WriteLine();
                     Console.WriteLine("사냥터로 돌아갑니다.");
+                    Util.PressAnyKey();
                     Game.ChangeScene("HuntingGround");
                     break;
                 default:
                     break;
             }
-            Util.PressAnyKey();
         }
 
     }

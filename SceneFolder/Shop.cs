@@ -36,6 +36,7 @@ namespace KGA_OOPConsoleProject
                     Game.ChangeScene("ShopSelling");
                     break;
                 case ConsoleKey.D3:
+                    Console.WriteLine();
                     Console.WriteLine("마을로 돌아갑니다.");
                     Util.PressAnyKey();
                     Game.ChangeScene("Town");

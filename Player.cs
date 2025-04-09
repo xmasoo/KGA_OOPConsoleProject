@@ -94,7 +94,7 @@ namespace KGA_OOPConsoleProject
         {
             string s;
             s = item.Equipable ? "장착" : "사용";
-            Console.WriteLine($"{item.Name}을 {s}하여 플레이어의 {item.Effect}이(가) {item.EffectValue}만큼 상승했습니다!");
+            Console.WriteLine($"{item.Name}을(를) {s}하여 플레이어의 {item.Effect}이(가) {item.EffectValue}만큼 상승했습니다!");
             switch(item.Effect)
             {
                 case "공격력":
@@ -116,7 +116,7 @@ namespace KGA_OOPConsoleProject
 
         public void EffectOff(Item item)// 아이템을 해제했을 때 
         {
-            Console.WriteLine($"{item.Name}을 탈착해서 플레이어의 {item.Effect}이(가) {item.EffectValue}만큼 하락했습니다!");
+            Console.WriteLine($"{item.Name}을(를) 탈착해서 플레이어의 {item.Effect}이(가) {item.EffectValue}만큼 하락했습니다!");
             switch (item.Effect)
             {
                 case "공격력":
