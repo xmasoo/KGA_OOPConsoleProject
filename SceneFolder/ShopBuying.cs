@@ -17,18 +17,18 @@
             x = cursorPosx / n;
             shopItem = new Item[3, 4];//아이템 추가할거면 배열크기 늘리고 밑에 추가하면 됨
             shopItem[0, 0] = new Item("나무 검", "보통 검이다", 100, true, "공격력", 5);
-            shopItem[0, 1] = new Item("철 검   ", "단단한 검이다", 200, true, "공격력", 10);
+            shopItem[0, 1] = new Item("철 검", "단단한 검이다", 200, true, "공격력", 10);
             shopItem[0, 2] = new Item("티타늄 검", "단단하고 가벼워서 휘두르기 좋다", 300, true, "공격력", 50);
             shopItem[1, 0] = new Item("나무 방패", "보통 방패다", 100, true, "방어력", 3);
             shopItem[1, 1] = new Item("철 방패 ", "단단한 방패다", 200, true, "방어력", 10);
             shopItem[1, 2] = new Item("티타늄 방패", "어중간한 공격으로는 흡집도 나지 않을 거 같다", 500, true, "방어력", 30);
-            shopItem[2, 0] = new Item("포션    ", "먹으면 체력이 회복된다", 50, false, "체력", 30);
-            shopItem[2, 1] = new Item("엘릭서  ", "먹으면 체력이 많이 회복된다", 150, false, "체력", 70);
+            shopItem[2, 0] = new Item("포션", "먹으면 체력이 회복된다", 50, false, "체력", 30);
+            shopItem[2, 1] = new Item("엘릭서", "먹으면 체력이 많이 회복된다", 150, false, "체력", 70);
             shopItem[2, 2] = new Item("사탕", "달달허이 최대 체력이 조금 오른다", 200, false, "최대체력", 20);
 
             shopItem[0, 3] = new Item("치트 검", "즉사치트", 1000, true, "공격력", 500);
             shopItem[1, 3] = new Item("식용 돌", "꼭꼭 씹어먹으면 방어력이 오른다", 250, false, "방어력", 3);
-            shopItem[2, 3] = new Item("프로틴  ", "먹으면 근육이 올라온다", 200, false, "공격력", 5);
+            shopItem[2, 3] = new Item("프로틴", "먹으면 근육이 올라온다", 200, false, "공격력", 5);
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine("현재 위치는 상점입니다.");
@@ -42,9 +42,6 @@
                 }
                 Console.WriteLine();
             }
-            //Console.WriteLine($"  1. {shopItem[0, 0].Name} \t 2. {shopItem[0, 1].Name} \t 3. {shopItem[0, 2].Name}");
-            //Console.WriteLine($"  4. {shopItem[1, 0].Name} \t 5. {shopItem[1, 1].Name} \t 6. {shopItem[1, 2].Name}");
-            //Console.WriteLine($"  7. {shopItem[2, 0].Name} \t 8. {shopItem[2, 1].Name} \t 9. {shopItem[2, 2].Name}");//상점이 많아지면 for문 써도 좋을듯
             Console.WriteLine();
 
             Console.WriteLine($"{shopItem[y, x].Description} / 가격 : {shopItem[y, x].Price} 골드"); //아이템설명이나오게

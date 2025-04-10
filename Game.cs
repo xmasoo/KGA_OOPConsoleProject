@@ -53,7 +53,13 @@ namespace KGA_OOPConsoleProject
 
         public static void End()
         {
-            if (player.IsDead())
+            if (bossCount == 4)
+            {
+                Util.Transition("clear");
+                Console.WriteLine("모든 보스를 처치했습니다. 게임 클리어!");
+                Util.PressAnyKey();
+            }
+            else if (player.IsDead())
             {
                 Util.Transition("gameover");
                 Console.WriteLine("당신은 죽었습니다..");
@@ -61,9 +67,7 @@ namespace KGA_OOPConsoleProject
             }
             else
             {
-                Util.Transition("clear");
-                Console.WriteLine("모든 보스를 처치했습니다. 게임 클리어!");
-                Util.PressAnyKey();
+                Console.WriteLine("게임을 종료합니다.");
             }
         }
     }

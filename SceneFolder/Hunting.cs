@@ -42,7 +42,6 @@
                 case ConsoleKey.D3:
                     Game.monster = monster;
                     Game.ChangeScene("Battle");
-                    Util.Transition("battle");
                     break;
                 case ConsoleKey.D0:
                     Console.WriteLine();

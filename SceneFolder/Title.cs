@@ -36,7 +36,7 @@
                     Game.ChangeScene("Setting");
                     break;
                 case ConsoleKey.D3:
-                    Game.ChangeScene("End");
+                    Game.isRunning = false;
                     break;
                 default:
                     break;

@@ -3,7 +3,7 @@
     public class Battle : Scene//세세하게 구현은 일단 나중에 우선은 서로 한 대 씩 때리기만 하게
     {
         private ConsoleKey input;
-        private Queue<string> queue = new Queue<string>();//나중을 위해 일단 큐를 만들어놓자
+        private Queue<string> queue = new Queue<string>();
         private Monster monster;
 
         public override void Render()
