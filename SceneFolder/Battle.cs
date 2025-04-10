@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace KGA_OOPConsoleProject
+﻿namespace KGA_OOPConsoleProject
 {
     public class Battle : Scene//세세하게 구현은 일단 나중에 우선은 서로 한 대 씩 때리기만 하게
     {
@@ -30,7 +28,7 @@ namespace KGA_OOPConsoleProject
                     queue.Enqueue("playerAttack");
                     queue.Enqueue("monsterAttack");
                     break;
-                    case ConsoleKey.D2:
+                case ConsoleKey.D2:
                     queue.Enqueue("playerItem");
                     break;
                 case ConsoleKey.D3:
@@ -78,14 +76,15 @@ namespace KGA_OOPConsoleProject
         public void Reward()
         {
             Console.WriteLine($"{monster.Name}이(가) 죽었습니다.");
-            Console.WriteLine($"{monster.Exp} 경험치를 획득합니다.");
+            Console.WriteLine();
             Game.player.GainExp(monster.Exp);
             Game.player.AddGold(monster.Gold);
+
             Console.WriteLine($"플레이어의 현재 경험치: {Game.player.Exp}");
             Console.WriteLine($"플레이어의 현재 골드: {Game.player.Gold}");
             if (monster.IsBoss()) Game.bossCount++;//보스라면 보스카운트 증가
             queue.Clear();//전투가 끝나면 큐를 초기화
-            if (Game.bossCount == 4)
+            if (Game.bossCount == 4)//사천왕을 다잡았으면 게임 종료
             {
                 Game.isRunning = false;
                 return;

@@ -6,7 +6,7 @@
         public string Description { get; private set; }
         public int Price { get; private set; }
 
-        public bool Equipable { get;private set; }
+        public bool Equipable { get; private set; }
         public string Effect { get; private set; }
         public int EffectValue { get; private set; }
 

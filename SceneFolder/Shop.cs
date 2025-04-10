@@ -6,7 +6,7 @@
         public bool isPayed = false;//상점에서 얼마 이상을 쓰면 발생하는 이벤트 용
         public override void Render()
         {
-            if (ShopBuying.payedGold >= 100) isPayed = true;
+            if (ShopBuying.payedGold >= 500) isPayed = true;
             if (!isPayed)
             {
                 Console.WriteLine("\"없는 거 빼고 다 있다네\"");

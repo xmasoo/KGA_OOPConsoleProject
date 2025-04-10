@@ -53,7 +53,7 @@ namespace KGA_OOPConsoleProject
 
         public static void End()
         {
-            if(player.IsDead())
+            if (player.IsDead())
             {
                 Util.Transition("gameover");
                 Console.WriteLine("당신은 죽었습니다..");

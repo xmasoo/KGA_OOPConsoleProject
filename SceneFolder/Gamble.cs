@@ -35,14 +35,16 @@
             switch (input)
             {
                 case ConsoleKey.D1:
-                    if (betting == 0) Console.WriteLine("잘못 입력하였거나 0원을 베팅하셨습니다.");
-                    else if (betting > Game.player.Gold) Console.WriteLine("소지금보다 많은 금액을 베팅할 수 없습니다.");
+                    if (betting == 0)
+                        Console.WriteLine("잘못 입력하였거나 0원을 베팅하셨습니다.");
+                    else if (betting > Game.player.Gold)
+                        Console.WriteLine("소지금보다 많은 금액을 베팅할 수 없습니다.");
                     else
                     {
                         random = new Random();
                         Console.WriteLine($"{betting} 골드를 베팅하셨습니다.");
                         Game.player.Gold -= betting;
-                        int n = random.Next(50, 150);
+                        int n = random.Next(50, 150);//판돈의 배율
                         betting = betting * n / 100;
                         if (n > 100) Console.WriteLine("운이 좋으시군요!");
                         else Console.WriteLine("다음엔 따실 수 있을 거에요.");

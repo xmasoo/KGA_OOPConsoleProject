@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-
-namespace KGA_OOPConsoleProject
+﻿namespace KGA_OOPConsoleProject
 {
     public class Player
     {
@@ -17,8 +10,8 @@ namespace KGA_OOPConsoleProject
         public int Exp { get; private set; }
         public int Gold { get; set; }
 
-        public Player() 
-        { 
+        public Player()
+        {
             MaxHP = 100;
             CurrentHP = MaxHP;
             AttackPower = 10;
@@ -45,10 +38,11 @@ namespace KGA_OOPConsoleProject
         }
         public bool IsDead()
         {
-            return CurrentHP <= 0;           
+            return CurrentHP <= 0;
         }
         public void GainExp(int amount)
         {
+            Console.WriteLine($"{amount} 경험치를 획득했습니다.");
             Exp += amount;
             while (Exp >= 100)
             {
@@ -67,11 +61,13 @@ namespace KGA_OOPConsoleProject
             AttackPower += 2; // 레벨업 시 공격력 증가
             DefensePower += 1; // 레벨업 시 방어력 증가
             Console.WriteLine($"레벨업! 현재 레벨: {Level}");
+            Console.WriteLine();
         }
         public void AddGold(int amount)
         {
             Gold += amount;
-            Console.WriteLine($"{amount}골드를 획득했습니다.");
+            Console.WriteLine($"{amount} 골드를 획득했습니다.");
+            Console.WriteLine();
         }
         public bool SpendGold(int amount)
         {
@@ -79,7 +75,7 @@ namespace KGA_OOPConsoleProject
             {
                 Gold -= amount;
                 Util.DeleteLine();
-                Console.WriteLine($"{amount}골드를 사용했습니다.");
+                Console.WriteLine($"{amount} 골드를 사용했습니다.");
                 return true;
             }
             else
@@ -95,7 +91,7 @@ namespace KGA_OOPConsoleProject
             string s;
             s = item.Equipable ? "장착" : "사용";
             Console.WriteLine($"{item.Name}을(를) {s}하여 플레이어의 {item.Effect}이(가) {item.EffectValue}만큼 상승했습니다!");
-            switch(item.Effect)
+            switch (item.Effect)
             {
                 case "공격력":
                     AttackPower += item.EffectValue;

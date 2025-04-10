@@ -9,7 +9,7 @@
         public override void Render()
         {
             Console.WriteLine("설정");
-            Console.WriteLine("초기 체력 : {0}",Game.player.MaxHP);
+            Console.WriteLine("초기 체력 : {0}", Game.player.MaxHP);
             PrintGauge(option1Count);
             Console.WriteLine("초기 골드 : {0}", Game.player.Gold);
             PrintGauge(option2Count);
